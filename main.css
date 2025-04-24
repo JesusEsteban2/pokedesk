@@ -1,0 +1,21 @@
+h1 {
+  color: blue;
+  font-size: 2em;
+  text-align: center;
+}
+
+.poke-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.poke-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 2px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
