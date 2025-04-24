@@ -2,9 +2,6 @@ Practica Pokemon
 
 Esta aplicación tendrá inicialmente 2 páginas:
 
-- Todos los pokémon
-- Detalle de pokémon
-
 El listado de todos los pokémon se alimentará de la [PokéAPI](https://pokeapi.co/), y deberá ir paginado. El listado incluirá el nombre del pokemon y **su imagen** y deberá ir acompañado de dos botones, para avanzar y retroceder de página. También debe mostrar el total de pokèmon mostrados vs. el total de pokèmon que existen (p.e. 10/1000).
 
 El usuario debería poder ir al detalle de un pokémon, donde se le mostrarán más datos.
