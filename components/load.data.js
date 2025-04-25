@@ -8,8 +8,25 @@ export const loadData = [
     type: 'Electro',
   },
   {
-    name: 'Bulabasaur',
+    name: 'Bulbasaur',
     image: 'assets/bulbasaur.png',
     type: 'Planta/Veneno',
   },
 ];
+
+export async function dataElement(number) {
+  const url = 'https://pokeapi.co/api/v2/pokemon/';
+  const params = String(number);
+
+  try {
+    const response = await fetch(url + params);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    let result = await response.json();
+    console.dir(result);
+    return result;
+  } catch (error) {
+    console.log(error, error.message);
+  }
+}

@@ -1,20 +1,22 @@
-import { loadData } from './load.data.js';
+import { loadData, dataElement } from './load.data.js';
 
-export function renderCharacter() {
+export async function renderCharacter() {
   const insertPoint = 'beforeend';
-  const data = loadData;
-  data.forEach((element) => {
-    const template = `
+  for (var i = 1; i <= 9; i++) {
+    const data = [dataElement(i)];
+
+    for await (const element of data) {
+      const template = `
     <div class="poke-card">
-          <img src="${element.image}" alt="${element.image}" type="image/x-png" width="200"/>
+          <img src="${element.sprites.front_default}" alt="${element.name}" type="image/x-png" width="200"/>
           <h2>${element.name}</h2>
-          <p>Tipo: ${element.type}</p>
+          <p>Tipo: ${element.types[0].type.name}</p>
      </div>
    `;
-    const html = render(insertPoint, template);
-  });
+      render(insertPoint, template);
+    }
+  }
 }
-
 export function render(insertPoint, template) {
   const point = document.querySelector('.poke-list');
   point.insertAdjacentHTML(insertPoint, template);
